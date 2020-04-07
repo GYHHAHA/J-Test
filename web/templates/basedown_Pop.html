@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Pop{% endblock %}
+ 
+{% block content %}
+<h2>
+    流行风格
+</h2>
+<img src="{{ url_for('static', filename='pop.jpg') }}" width="200"> 
+<br>
+<br>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+	已处理完毕！<br>
+	点击<a href="{{ url_for('downloading_pop') }}">此处</a>下载mxl文件<br>
+	点击<a href="{{ url_for('downloading_pop_pdf') }}">此处</a>下载pdf文件
+	</form>
+    </div>
+<br>
+{% endblock %}

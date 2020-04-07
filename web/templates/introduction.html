@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}项目内容简介{% endblock %}
+
+{% block content %}
+<h2>
+    <img src="{{ url_for('static', filename='musicicon.jpg') }}" width="50"> 项目内容简介
+</h2>
+<h3>一、研究内容</h3>
+本项目通过深度学习算法与音乐理论知识的综合应用，让计算机按特定音乐风格编曲。此处的特定风格编曲是指，如果用户每次输入同一段旋律，但选择了不同的音乐风格，最终计算机对旋律进行编曲后，每次输出的将会是基于同一段旋律但风格不相同的音乐。其中选取了四种具有较强可区分性的音乐风格，包括：四声部众赞歌（Four-Parts-Chorals）、爵士（Jazz）、流行（Pop-Style）和赋格（Fugue）。在完成所有模型后，应将模型部署到服务器上，提供网页版接口以上传或下载文件，并建设服务端页面，使功能完善。
+<h3>二、成果概述</h3>
+当前，预期的四个模型已经全部完成，并部署到线上。模型将实现三个功能：
+<li>用户输入一段的旋律，在以上四种音乐风格中选择一个特定的风格，计算机进行编曲并输出音乐，并且输出的音乐能够满足用户预先指定的风格。即采用与外界交互的形式来返回基于该材料与风格的结果。</li>
+<li>无需用户的额外输入旋律，计算机自动生成音乐样本（包括旋律和和弦序列等等），在此基础上进行编曲。</li>
+<li>将模型部署到服务器上，提供网页版接口以上传或下载文件。</li>
+<center><img src="{{ url_for('static', filename='intro1.png') }}" width="500"></center>
+<h3>三、项目创新</h3>
+<li>编码方式特色：二次编码，以记录音差方式替代传统记录音高的方式</li>
+<center><img src="{{ url_for('static', filename='intro2.png') }}" width="300"></center>
+<li>网络构建方式特色：每种模型根据音乐实际特点设计相应网络</li>
+<center><img src="{{ url_for('static', filename='intro3.png') }}" width="300"></center>
+<li>解码方式特色：二次解码，解码器设置两种阀值控制方法</li>
+<center><img src="{{ url_for('static', filename='intro4.png') }}" width="200"></center>
+<li>改进方法特色：不协和音的处理方法、调性归一化方式、终止式处理</li>
+<li>线上部署特色：用户对每种模型有多种方案选择，更为灵活</li>
+{% endblock %}
